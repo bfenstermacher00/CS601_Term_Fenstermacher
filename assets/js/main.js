@@ -65,3 +65,7 @@ window.addEventListener("load", function() {
 	}
 });
 
+function toggleMenu() {
+	let mobileToggle = document.getElementById("mobile-nav-toggle");
+	mobileToggle.classList.toggle("active");
+}
