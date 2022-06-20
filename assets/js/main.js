@@ -71,7 +71,7 @@ function toggleMenu() {
 }
 
 new Vue({
-	el: "#app",
+	el: "#vue-switch",
 	data() {
 		return {
 			imgOne: "https://brianfenstermacher.netlify.app/assets/img/wfx-front.png",
