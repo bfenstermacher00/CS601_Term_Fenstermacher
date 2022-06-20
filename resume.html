@@ -14,9 +14,11 @@
     <header class="nav">
       <div class="flex-container">
         <div class="logo-wrapper">
-          <img src="assets/img/bf-logo.png" alt="BF logo"/>
+          <a href="/">
+            <img src="assets/img/bf-logo.png" alt="BF logo"/>
+          </a>
         </div>
-        <div class="navigation-items">
+        <div class="navigation-items" id="mobile-nav-toggle" onclick="toggleMenu()">
           <ul class="nav-wrapper">
             <li class="menu-item">
               <a href="/resume.html">Resume</a>
@@ -28,10 +30,10 @@
               <a href="/gallery.html">Gallery</a>
               <ul class="sub-menu">
                 <li class="menu-item sub-item">
-                  <a href="/gallery.html/previous-site.html">Previous Site</a>
+                  <a href="/previous-site.html">Previous Site</a>
                 </li>
                 <li class="menu-item sub-item">
-                  <a href="gallery.html/bottles.html">Non-web related work</a>
+                  <a href="/bottles.html">Non-web related work</a>
                 </li>
               </ul>
             </li>
