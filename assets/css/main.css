@@ -1,0 +1,1107 @@
+/*
+ *
+ Main Styles for Brian Fenstermacher's website
+ *
+ */
+
+ /* Font styles */
+
+ body {
+ 	font-size: 17px;
+ 	line-height: 1.5rem;
+ 	color: #636363;
+ 	font-family: 'Roboto', sans-serif;
+ 	margin: 0;
+ }
+
+/* Including the class ".h1" here because SEO prefers there to only ever be one h1 element per page, however, there may be times where we would like to use the h1 styling and that can then be utilized via the ".h1" class */
+ h1,
+ .h1 {
+ 	font-size: 42px;
+ 	line-height: 1.1em;
+ 	font-weight: 700;
+ 	color: #336767;
+ }
+
+ h2 {
+ 	font-size: 30px;
+ 	font-weight: 700;
+ 	color: #336767;
+ 	margin-top: 0;
+ 	line-height: 1.1em;
+ 	width: 100%;
+ }
+
+ h3 {
+ 	font-size: 24px;
+ 	font-weight: 400;
+ }
+
+ p,
+ li,
+ a {
+ 	font-size: 17px;
+ 	font-weight: 400;
+ }
+
+ p a {
+ 	color: #336767;
+ 	transition: all .3s ease-in-out;
+ }
+
+ p a:hover {
+ 	color: #1c4141;
+ }
+
+ @media screen and (min-width: 1200px) {
+
+ 	h1 {
+ 		font-size: 58px;
+ 	}
+
+ 	h2 {
+ 		font-size: 42px;
+ 	}
+
+ }
+
+ /* Layout styles */
+
+ .container {
+ 	max-width: 1366px;
+ 	margin: 0 auto;
+ 	padding: 0 25px;
+ }
+
+ .flex-row {
+ 	display: flex;
+ 	flex-wrap: wrap;
+ }
+
+
+/* For white backgrounds I'm using margins because it will overlap other margin sections, ie. if we have 2 white background sections back to back, the space between them will be 60px as opposed to stacking the two (like padding would) and making it 120px */
+ .white-bg {
+ 	background-color: #fff;
+ 	margin: 60px 0;
+ }
+
+ .grey-bg {
+ 	background-color: #efefef;
+ 	padding: 60px 0;
+ }
+
+ @media screen and (min-width: 1200px) {
+
+ 	.white-bg {
+ 		margin: 80px 0;
+ 	}
+
+ 	.grey-bg {
+ 		padding: 80px 0;
+ 	}
+ 	
+ }
+
+ /* Table styles */
+ /* Styling concept taken from CSS Tricks (https://css-tricks.com/responsive-data-tables/) */
+
+
+
+ table, thead, tbody, th, td, tr {
+ 	display: block;
+ }
+
+ tr:first-of-type {
+ 	position: absolute;
+ 	top: -9999px;
+ 	left: -9999px;
+ }
+
+ tr {
+ 	border: 1px solid #ccc;
+ }
+
+ td {
+ 	border: none;
+ 	border-bottom: 1px solid #eee;
+ 	position: relative;
+ 	padding: 8px 5px 8px 50%;
+ }
+
+ td:before {
+ 	position: absolute;
+ 	top: 8px;
+ 	left: 8px;
+ 	width: 45%;
+ 	padding-right: 10px;
+ 	white-space: nowrap;
+ }
+
+ td:nth-of-type(1):before {
+ 	content: "Question:";
+ }
+
+ td:nth-of-type(2):before {
+ 	content: "Answer:";
+ }
+
+ @media screen and (min-width: 900px) {
+
+ 	table {
+ 		display: table;
+ 	}
+
+ 	tbody {
+ 		display: table-row-group;
+ 	}
+
+ 	tr {
+ 		display: table-row;
+ 	}
+
+ 	th,
+ 	td {
+ 		display: table-cell;
+ 		padding: initial;
+ 		text-align: left;
+ 		margin: 0;
+ 		border: 1px solid #efefef;
+ 		padding: 10px;
+ 	}
+
+ 	tr:first-of-type {
+ 		position: relative;
+ 		top: initial;
+ 		left: initial;
+ 	}
+
+ 	td:before {
+ 		display: none;
+ 	}
+
+ }
+
+ /* Header Styles */
+
+ nav.site-navigation {
+ 	padding: 10px 0;
+ 	position: fixed;
+ 	width: 100vw;
+ 	top: 0;
+ 	background-color: #fff;
+ 	max-width: 100%;
+ 	overflow: hidden;
+ 	box-shadow: 0 0 20px rgba(0,0,0,.1);
+ 	z-index: 2;
+ }
+
+ .site-navigation .flex-row {
+ 	align-items: center;
+ }
+
+ a.site-logo {
+ 	display: inline-block;
+ 	height: 70px;
+ }
+
+ a.site-logo > img {
+ 	height: 100%;
+ 	width: 100%;
+ 	object-fit: contain;
+ 	-o-object-fit: contain;
+ 	font-family: 'object-fit: contain;';
+ }
+
+ .header-content-right {
+ 	width: calc(100% - 56px);
+ }
+
+ .navigation-items {
+ 	display: flex;
+ 	flex-direction: row;
+ 	align-items: center;
+ 	justify-content: right;
+ }
+
+ .navigation-items li {
+ 	list-style: none;
+ 	padding-left: 20px;
+ 	text-transform: uppercase;
+ }
+
+/* I'm using a border bottom here instead of text decoration underline because I wanted to include the transition which only applies itself to the border as it needs to be applied to both the active and inactive state, ie. the border bottom still exists when the user isn't hovering it's just invisible whereas when the user hovers, it has an opacity of 1 and therefore a transition can be added because the transition is adjusting that opacity value */
+  .navigation-items li a {
+  	text-decoration: none;
+  	color: #336767;
+  	border-bottom: 2px solid #33676700;
+  	transition: all .3s ease-in-out;
+  }
+
+  .navigation-items li a:hover {
+  	transition: all .3s ease-in-out;
+  	border-bottom: 2px solid #336767FF;
+  }
+
+  /* About Section Styles */
+
+  @media (min-width: 900px) {
+
+  	section.short-about.white-bg {
+  		max-width: 75%;
+  		margin: 60px auto;
+  	}
+
+  }
+
+/* Masthead styles */
+
+/* Testing out specificity */
+section.masthead.grey-bg {
+	position: relative;
+	background-color: #212d3a;
+}
+
+section.masthead.grey-bg h1 {
+	color: #fff;
+}
+
+section.masthead.grey-bg img {
+	height: 100%;
+	width: 40%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	object-fit: cover;
+	-o-object-fit: cover;
+	font-family: 'object-fit: cover;';
+	object-position: 0 25%;
+}
+
+/* About Page Styles */
+
+.iframe-wrapper {
+	width: 100%;
+	height: 0;
+	padding-top: 56.25%;
+	position: relative;
+}
+
+.iframe-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	-o-object-fit: cover;
+	font-family: 'object-fit: cover;';
+}
+
+@media screen and (min-width: 900px) {
+
+	.side-by-side-section {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	.content-left,
+	.content-right {
+		width: calc(50% - 10px);
+	}
+}
+
+/* Gallery Styles */
+
+.image-carousel {
+	text-align: center;
+	width: 100%;
+}
+
+.image-carousel img {
+	height: 100px;
+	width: auto;
+	margin: 10px;
+	display: inline-block;
+}
+
+/* JSON Fetch Example Styles */
+
+button#sd-button {
+	padding: 12px 25px;
+	font-size: 17px;
+	background: transparent;
+	border: 2px solid #336767;
+	color: #336767;
+	transition: all .3s ease-in-out;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+button#sd-button:hover {
+	color: #fff;
+	background: #336767;
+}
+
+#school-data {
+	margin-top: 40px;
+}
+
+.schooling-history {
+	margin-bottom: 20px;
+	background: #fff;
+	border-radius: 5px;
+	border: 1px solid #efefef;
+}
+
+h3.school {
+	padding: 10px 20px;
+	background: #efefef;
+	border-radius: 5px 5px 0 0;
+	margin-top: 0;
+}
+
+.schooling-history h4 {
+	padding: 0 20px;
+}
+
+
+  /* Footer Styles */
+
+  /* I'm making the color of the text in the footer a bit lighter than the rest since the content there is less important than that on the rest of the site so from a text heirarchy standpoint we want the other items to stand out in comparison */
+  footer {
+  	text-align: center;
+  	color: #909090;
+  }
+
+  form#addition {
+  	padding-bottom: 8px;
+  	border-bottom: 1px solid #bababa;
+  	margin-bottom: 20px;
+  }
+
+ul {
+	list-style: circle;
+}
+
+  /* Term Project Styles */
+  /* Mobile first design */
+
+header.nav {
+  padding: 20px 0;
+  background: #efefef;
+}
+
+.flex-container {
+	display: flex;
+	flex-direction: row;
+	margin: 0 auto;
+	padding: 0 15px;
+	max-width: 1366px;
+	position: relative;
+	z-index: 1;
+	flex-wrap: wrap;
+}
+
+header.nav .flex-container {
+	justify-content: space-between;
+}
+
+.logo-wrapper {
+	height: 80px;
+	position: relative;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+	-o-object-fit: contain;
+	font-family: 'object-fit: contain;';
+}
+
+.navigation-items {
+	height: 50px;
+	width: 50px;
+	cursor: pointer;
+}
+
+.navigation-items:before {
+	content: "";
+	width: 40px;
+	height: 2px;
+	background: #000;
+	display: block;
+	margin-bottom: 15px;
+	position: absolute;
+	margin-top: 10px;
+	margin-right: 5px;
+}
+
+.navigation-items:after {
+	content: "";
+	width: 40px;
+	height: 2px;
+	background: #000;
+	display: block;
+	position: absolute;
+	margin-top: 15px;
+	margin-right: 5px;
+}
+
+ul.nav-wrapper {
+	position: absolute;
+	width: calc(100vw - 30px);
+	left: 0;
+	top: 120px;
+	background: #ddd;
+	margin: 0;
+	padding: 40px 15px;
+	box-shadow: 0 8px 8px rgba(0,0,0,.15);
+	display: none;
+}
+
+.img-wrapper img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	-o-object-fit: cover;
+	font-family: 'object-fit:cover;';
+	object-position: top;
+}
+
+section.homepage-masthead {
+	position: relative;
+	padding: 60px 0;
+	background: #212d3a;
+}
+
+section.homepage-masthead img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	-o-object-fit: cover;
+	font-family: 'object-fit: cover;';
+	opacity: 0.5;
+	object-position: 0 30%;
+}
+
+section.homepage-masthead h1,
+section.homepage-masthead p {
+	color: #fff;
+}
+
+section#lazyload {
+	position: relative;
+	margin: 60px 0;
+}
+
+a.btn,
+input.btn {
+	padding: 11px 25px;
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
+	font-size: 18px;
+}
+
+a.btn-primary,
+input.btn-primary {
+	background: #7a9e9f;
+	color: #fff;
+	border: 2px solid #7a9e9f;
+	transition: all .3s ease-in-out;
+}
+
+a.btn-primary:hover,
+input.btn-primary:hover {
+	color: #7a9e9f;
+	background: none;
+}
+
+.homepage-about ul {
+	column-count: 2;
+	background: #efefef;
+	padding: 25px 50px;
+}
+
+.homepage-about li {
+	color: #336767;
+	list-style: circle;
+}
+
+section.homepage-featured .content-6:first-of-type {
+	margin-bottom: 30px;
+}
+
+section.homepage-contact {
+	background: #efefef;
+	padding: 60px 0;
+	text-align: center;
+	margin-bottom: 0 !important;
+}
+
+footer {
+	padding: 20px 0;
+}
+
+footer .flex-container {
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+footer .quick-links ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+footer .quick-links li {
+	text-decoration: none;
+	margin: 10px 0;
+}
+
+footer .quick-links li:last-of-type {
+	margin-bottom: 0;
+}
+
+footer .quick-links li a {
+	text-decoration: none;
+	color: #336767;
+	border-bottom: 2px solid #33676700;
+	transition: all .3s ease-in-out;
+}
+
+footer .quick-links li a:hover {
+	border-bottom: 2px solid #336767FF;
+}
+
+.img-wrapper {
+	background: #212d3a;
+	width: 100%;
+	height: 250px;
+	margin-bottom: 30px;
+}
+
+.social-links ul {
+	padding: 0;
+	margin: 0;
+	display: flex;
+}
+
+li.social-item {
+	text-decoration: none;
+	list-style: none;
+	margin-left: 10px;
+}
+
+a.social-wrap {
+	height: 30px;
+	display: inline-block;
+}
+
+.gallery-wrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.content-12 {
+	width: 100%;
+}
+
+.gallery-item {
+	position: relative;
+	min-height: 300px;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.gallery-item:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 50%;
+	background-image: linear-gradient(0deg, #344447, transparent);
+	z-index: 1;
+	bottom: 0;
+	transition: all .3s ease-in-out;
+	pointer-events: none;
+}
+
+.gallery-item > a {
+	height: 100%;
+	width: 100%;
+	display: block;
+	text-decoration: none;
+}
+
+.gallery-item img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+	-o-object-fit: cover;
+	font-family: 'object-fit: cover;';
+}
+
+.gal-desc {
+	position: absolute;
+	z-index: 1;
+	color: #fff;
+	padding: 25px;
+	width: calc(100% - 50px);
+	bottom: -235px;
+	transition: all .3s ease-in-out;
+	pointer-events: none;
+}
+
+.gal-desc h4 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-size: 30px;
+}
+
+.gal-desc p {
+	opacity: 0;
+	height: 200px;
+	transition: all .3s ease-in-out;
+}
+
+.gallery-item:hover .gal-desc {
+	bottom: -100px;
+}
+
+.gallery-item:hover .gal-desc p {
+	opacity: 1;
+}
+
+.gallery-item:hover:before {
+	content: "";
+	background: rgba(52,68,71,.8);
+	height: 100%;
+}
+
+section {
+	padding: 80px 0;
+}
+
+section.project-header {
+	padding-bottom: 0;
+}
+
+.project-header .flex-container {
+	justify-content: center;
+}
+
+.project-header .content-6.img-wrapper {
+	background: transparent;
+	height: 400px;
+}
+
+.project-header .img-wrapper img {
+	object-fit: contain;
+	-o-object-fit: contain;
+}
+
+section#lazyload.project-description {
+	margin-top: 0;
+}
+
+button.exp-btn {
+	background: none;
+	border: none;
+	font-size: 18px;
+	padding: 0;
+	margin-right: 20px;
+	color: #a7bcbd;
+	cursor: pointer;
+}
+
+button.exp-btn:hover {
+	text-decoration: underline;
+}
+
+.content-10 {
+	width: 100%;
+}
+
+.school-block {
+	border: 1px solid #7a9e9f;
+	padding: 25px;
+	margin-bottom: 10px;
+}
+
+.school-block h3 {
+	margin-top: 10px;
+}
+
+.skill-wrapper {
+	padding-bottom: 10px;
+	border-top: 1px solid #efefef;
+}
+
+.skill-wrapper ul {
+	column-count: 2;
+}
+
+section[class*="resume-"] {
+	margin: 80px 0;
+	padding: 0;
+}
+
+ul.nav.nav-tabs {
+	padding: 0;
+	list-style: none;
+	display: flex;
+}
+
+.nav.nav-tabs a {
+	text-decoration: none;
+	font-size: 18px;
+	margin-right: 25px;
+	text-align: left;
+	color: #7a9e9f;
+	display: inline-block;
+}
+
+.nav.nav-tabs a:hover {
+	text-decoration: underline;
+}
+
+.nav.nav-tabs li.active a {
+	color: #4f6367;
+	text-decoration: underline;
+}
+
+.tab-content > .tab-pane {
+	display: none;
+}
+
+.tab-content > .tab-pane.active {
+	display: block;
+}
+
+.award-block {
+	text-align: center;
+	margin-bottom: 40px;
+	width: 100%;
+}
+
+.award-wrap {
+	height: 140px;
+}
+
+.resume-awards-section h2 {
+	width: 100%;
+	text-align: center;
+}
+
+form {
+	margin: 0 auto;
+	padding: 30px;
+	background: #efefef;
+}
+
+form .input-wrapper {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 10px;
+}
+
+form .input-wrapper:last-of-type {
+	margin-bottom: 20px;
+}
+
+form input {
+	font-size: 18px;
+	padding: 5px;
+}
+
+#lazyload {
+	opacity: 0;
+	transition: opacity 500ms;
+}
+
+#lazyload.scrolled {
+	opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+	.content-6.img-wrapper {
+		height: auto;
+		position: relative;
+		margin-bottom: 0 !important;
+		margin-right: 35px;
+		width: calc(50% - 35px);
+	}
+
+	.content-6.img-wrapper:before {
+		content: "";
+		height: 100%;
+		width: 100%;
+		background: #efefef;
+		position: absolute;
+		opacity: 1;
+		top: 10px;
+		right: 6px;
+		z-index: -1;
+	}
+
+	.content-6 {
+		width: 50%;
+	}
+
+	footer .quick-links ul {
+		display: flex;
+	}
+
+	footer .quick-links li {
+		margin: 0 15px;
+	}
+
+	header.nav .flex-container {
+		align-items: center;
+	}
+
+	.navigation-items {
+		height: initial;
+		width: initial;
+	}
+
+	.navigation-items li {
+		padding: 0 18px;
+	}
+
+	li.menu-item.has-child {
+		position: relative;
+	}
+
+	ul.sub-menu {
+		position: absolute;
+		width: 260px;
+		padding: 20px;
+		right: -18px;
+		background: #efefef;
+		opacity: 0;
+		pointer-events: none;
+		transition: all .3s ease-in-out;
+	}
+
+	.nav-wrapper > li.menu-item.has-child > a:after {
+		content: "";
+		border: solid #336767;
+		border-width: 0 2px 2px 0;
+		display: inline-block;
+		padding: 3px;
+		transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		margin-bottom: 4px;
+		margin-left: 6px;
+	}
+
+	li.menu-item.has-child:hover ul.sub-menu {
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	ul.sub-menu li {
+		margin: 10px 0;
+	}
+
+	.nav-wrapper > li.menu-item:last-of-type a {
+		display: inline-block;
+		padding: 11px 25px;
+		background: #4f6367;
+		color: #fff;
+		border: 2px solid #4f6367;
+		transition: all .3s ease-in-out;
+	}
+
+	.nav-wrapper > li.menu-item:hover:last-of-type a {
+		background: transparent;
+		color: #4f6367;
+	}
+
+	.navigation-items:before,
+	.navigation-items:after {
+		display: none;
+	}
+
+	ul.nav-wrapper {
+		display: flex;
+		position: relative;
+		width: initial;
+		left: initial;
+		top: initial;
+		background: transparent;
+		margin: 0;
+		padding: 0;
+		box-shadow: none;
+		align-items: center;
+	}
+
+	.gallery-wrapper {
+		justify-content: space-between;
+	}
+
+	.gallery-item {
+		width: calc(50% - 5px);
+		margin-bottom: 10px;
+	}
+
+	.gallery-item:first-of-type {
+		width: 100%;
+	}
+
+	.project-header .content-6.img-wrapper:before {
+		display: none;
+	}
+
+	.project-header .flex-container {
+		align-items: center;
+	}
+
+	.experience-tabs {
+		display: flex;
+		justify-content: left;
+		text-align: left;
+	}
+
+	ul.nav.nav-tabs {
+		width: 25%;
+		flex-direction: column;
+	}
+
+	ul.nav.nav-tabs a {
+		margin-right: 0;
+		margin-bottom: 12px;
+	}
+
+	div.tab-content {
+		width: 75%;
+		padding-left: 30px;
+		border-left: 1px solid #efefef;
+	}
+
+	li.active:after {
+		content: ">";
+		display: inline-block;
+		margin-left: 5px;
+	}
+
+	button.exp-btn {
+		font-size: 20px;
+		margin-bottom: 12px;
+		text-align: left;
+	}
+
+	.exp-panel h3 {
+		margin-top: 0;
+	}
+
+	.school-outer-wrap {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.school-block {
+		width: calc(50% - 55px);
+	}
+
+	.skills-outer-wrap {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.skill-wrapper {
+		width: calc(50% - 10px);
+		display: inline-block;
+	}
+
+	.award-block {
+		width: 50%;
+		display: inline-block;
+	}
+
+	.content-8 {
+		width: 66.666%;
+		margin: 0 auto;
+	}
+
+	form {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	.input-wrapper {
+		width: 100%;
+	}
+
+	.input-wrapper.input-w-half {
+		width: calc(50% - 5px);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.content-10 {
+		width: 83.3333%;
+		margin: 0 auto;
+	}
+
+	.homepage-about ul {
+		display: inline-block;
+		min-width: 400px;
+	}
+
+	section.homepage-masthead {
+		padding: 130px 0;
+	}
+
+	section.homepage-masthead img {
+		width: 50%;
+		left: initial;
+		right: 0;
+		opacity: .9;
+		object-position: 0 20%;
+	}
+
+	section.homepage-masthead h1 {
+		margin-top: 0;
+		font-size: 60px;
+		margin-bottom: 15px;
+	}
+
+	section#lazyload {
+		margin: 85px 0;
+	}
+
+	.flex-container {
+		align-items: center;
+	}
+
+	.gallery-item:first-of-type,
+	.gallery-item {
+		width: calc(33.333% - 10px);
+	}
+
+	section.project-header {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+}
+
+
+
+
+

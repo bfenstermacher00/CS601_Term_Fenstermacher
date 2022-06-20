@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <title>BF</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <header class="nav">
+      <div class="flex-container">
+        <div class="logo-wrapper">
+          <img src="assets/img/bf-logo.png" alt="BF logo"/>
+        </div>
+        <div class="navigation-items">
+          <ul class="nav-wrapper">
+            <li class="menu-item">
+              <a href="/resume.html">Resume</a>
+            </li>
+            <li class="menu-item">
+              <a href="/about-me.html">About</a>
+            </li>
+            <li class="menu-item has-child">
+              <a href="/gallery.html">Gallery</a>
+              <ul class="sub-menu">
+                <li class="menu-item sub-item">
+                  <a href="/gallery.html/previous-site.html">Previous Site</a>
+                </li>
+                <li class="menu-item sub-item">
+                  <a href="gallery.html/bottles.html">Non-web related work</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="/contact-me.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+
+      <section class="contact-section">
+        <div class="flex-container">
+          <div class="content-8">
+
+            <h2>Let's talk!</h2>
+            <p>If you have any questions about anything you've seen on the site or just want to talk please send me a message!</p>
+
+            <form action="https://bucs601.com/submit.php" method="post">
+
+              <div class="input-wrapper input-w-half">
+                <label for="firstName">First Name: <span class="required">*</span></label>
+                <input minlength="2" type="text" name="firstName" id="firstName">
+                <span id="fnameerror" style="display:none;"></span>
+              </div>
+
+              <div class="input-wrapper input-w-half">
+                <label for="lastName">Last Name: <span class="required">*</span></label>
+                <input minlength="2" type="text" name="lastName" id="lastName">
+                <span id="lnameerror" style="display:none;"></span>
+              </div>
+
+              <div class="input-wrapper">
+                <label for="message">Message: <span class="required">*</span></label>
+                <input type="textarea" name="message" id="message">
+                <span id="facerror" style="display:none;"></span>
+              </div>
+
+              <input id="submit" type="submit" class="btn btn-primary" name="submit" value="Submit">
+
+            </form>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="flex-container">
+        <div class="logo-wrapper">
+            <img src="assets/img/bf-logo.png" alt="BF logo"/>
+          </div>
+          <div class="quick-links">
+            <ul>
+                <li class="menu-item">
+                  <a href="/resume.html">Resume</a>
+                </li>
+                <li class="menu-item">
+                  <a href="/about-me.html">About</a>
+                </li>
+                <li class="menu-item has-child">
+                  <a href="/gallery.html">Gallery</a>
+                </li>
+                <li class="menu-item">
+                  <a href="/contact-me.html">Contact</a>
+                </li>
+            </ul>
+          </div>
+          <div class="social-links">
+            <ul>
+              <li class="social-item">
+                <a href="" class="social-wrap">
+                  <img src="assets/img/insta.png" alt="instagram"/>
+                </a>
+              </li>
+              <li class="social-item">
+                <a href="" class="social-wrap">
+                  <img src="assets/img/linkedin.png" alt="linkedin"/>
+                </a>
+              </li>
+            </ul>
+          </div>
+    </footer>
+  <script src="assets/js/main.js"></script>
+  </body>
+</html>

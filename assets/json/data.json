@@ -1,0 +1,6 @@
+{
+	"events": [
+		{"school": "Pennsylvania College of Art & Design", "program": "Graphic Design", "type": "BFA", "year": "2019" },
+		{"school": "Boston University", "program": "Software Development", "type": "MS", "year": "2023" }
+	]
+}
