@@ -227,6 +227,12 @@
  	list-style: none;
  	padding-left: 20px;
  	text-transform: uppercase;
+ 	margin-bottom: 15px;
+ }
+
+ .has-child > a {
+ 	display: inline-block;
+ 	margin-bottom: 10px;
  }
 
 /* I'm using a border bottom here instead of text decoration underline because I wanted to include the transition which only applies itself to the border as it needs to be applied to both the active and inactive state, ie. the border bottom still exists when the user isn't hovering it's just invisible whereas when the user hovers, it has an opacity of 1 and therefore a transition can be added because the transition is adjusting that opacity value */
@@ -394,6 +400,8 @@ ul {
 header.nav {
   padding: 20px 0;
   background: #efefef;
+  position: relative;
+  z-index: 3;
 }
 
 .flex-container {
@@ -440,6 +448,7 @@ img {
 	position: absolute;
 	margin-top: 10px;
 	margin-right: 5px;
+	transition: all .3s ease-in-out;
 }
 
 .navigation-items:after {
@@ -451,18 +460,35 @@ img {
 	position: absolute;
 	margin-top: 15px;
 	margin-right: 5px;
+	transition: all .3s ease-in-out;
+}
+
+.navigation-items.active:before {
+	content: "";
+	transform: rotate(45deg);
+	margin-bottom: 10px;
+}
+
+.navigation-items.active:after {
+	content: "";
+	transform: rotate(135deg);
+	margin-top: 0;
 }
 
 ul.nav-wrapper {
 	position: absolute;
 	width: calc(100vw - 30px);
 	left: 0;
-	top: 120px;
+	top: 100px;
 	background: #ddd;
 	margin: 0;
 	padding: 40px 15px;
 	box-shadow: 0 8px 8px rgba(0,0,0,.15);
 	display: none;
+}
+
+.navigation-items.active ul.nav-wrapper {
+	display: block;
 }
 
 .img-wrapper img {
@@ -879,7 +905,12 @@ form input {
 
 	.navigation-items li {
 		padding: 0 18px;
+		margin-bottom: 0;
 	}
+
+	 .has-child > a {
+	 	margin-bottom: 0;
+	 }
 
 	li.menu-item.has-child {
 		position: relative;
