@@ -69,3 +69,13 @@ function toggleMenu() {
 	let mobileToggle = document.getElementById("mobile-nav-toggle");
 	mobileToggle.classList.toggle("active");
 }
+
+new Vue({
+	el: "#vue-switch",
+	data() {
+		return {
+			imgOne: "https://brianfenstermacher.netlify.app/assets/img/wfx-front.png",
+			imgOneAlt: "https://brianfenstermacher.netlify.app/assets/img/wfx-team.png"
+		}
+	}
+})
